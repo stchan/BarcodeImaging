@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Text;
@@ -267,9 +267,16 @@ public class BarcodeImaging
 				if ((types & BarcodeType.Code128) != BarcodeType.None) // if caller wanted Code128
 				{
 					// Note: Code128 uses same bar width measurement data as EAN
+					// 2012OCT04 - Fix by matiascabanillas (replace pipe character with ☼) - https://www.codeproject.com/Tips/416486/Bug-Fixes-for-Reading-Barcodes-from-an-Image-III?msg=4388217#xx4388217xx
 					string sCode128 = ParseCode128(sbEANPattern);
 					if (sCode128.Length > 0)
-						lBarCodes.Add(sCode128);
+					{
+						string[] listResult = sCode128.Split('☼');
+						for (int i = 0; i < listResult.Length; i++)
+						{
+							lBarCodes.Add(listResult[i]);
+						}
+					}
 				}
 
 				// Reverse the bar pattern arrays to read again in the mirror direction
@@ -1186,10 +1193,11 @@ public class BarcodeImaging
 					break;
 				case CODE128STOP:
 					iPos += 7;
+					// 2012OCT04 - Fix by matiascabanillas (replace pipe character with ☼) - https://www.codeproject.com/Tips/416486/Bug-Fixes-for-Reading-Barcodes-from-an-Image-III?msg=4388217#xx4388217xx
 					if (sCode128Code.Count > 0)
 					{
 						if (sbCode128Data.Length > 0)
-							sbCode128Data.Append("|");
+							sbCode128Data.Append("☼");
 						foreach (string stringInList in sCode128Code)
 						{
 							sbCode128Data.Append(stringInList);
@@ -1253,7 +1261,11 @@ public class BarcodeImaging
 						//It was a CodePage change, not a checksum. 
 						//Replace the content of the last item with an empty string, 
 						//because it is only a control value, not part of the data.
-						sResult[sResult.Count - 1] = ""; 
+						// 2012OCT04 - Fix by matiascabanillas - https://www.codeproject.com/Tips/416486/Bug-Fixes-for-Reading-Barcodes-from-an-Image-III?msg=4388217#xx4388217xx
+						if (sResult.Count > 0)
+						{
+							sResult[sResult.Count - 1] = "";
+						}
 						bCodePageChanged = false;
 					}
 					if (i == CODE128STOP)
