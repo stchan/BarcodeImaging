@@ -1371,6 +1371,8 @@ public class BarcodeImaging
 		sResult.Clear();
 		uCheckSum = 0;
 		iCodes = 0;
+		// 2017JUN15 - fix by mrodby - https://www.codeproject.com/Tips/416486/Bug-Fixes-for-Reading-Barcodes-from-an-Image-III?msg=5406633#xx5406633xx
+		bCodePageChanged = false; 
 		return -1;
 	}
 	#endregion
