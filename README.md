@@ -1,6 +1,6 @@
 # BarcodeImaging v2.0
 
-I (@stchan) am not the author/owner of this code. [Berend Engelbrecht](https://www.codeproject.com/Members/Berend-Engelbrecht) created this .NET barcode detection library in 2009. His original codeproject article is [here](https://www.codeproject.com/Articles/42852/Reading-Barcodes-from-an-Image-III). This repo is intended to make the C# code easily available to git users.
+I (@stchan) am not the author/owner of this code. [Berend Engelbrecht](https://www.codeproject.com/Members/Berend-Engelbrecht) created this .NET barcode detection library in 2009. His original codeproject article is [here](https://www.codeproject.com/Articles/42852/Reading-Barcodes-from-an-Image-III). This repo is intended to make the C# code easily available to git users. See the original article for usage details and documentation, the license only permits usage of the code.
 
 ## Modifications
 * Target framework changed to .NET Standard 2.0
