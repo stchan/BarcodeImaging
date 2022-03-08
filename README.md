@@ -11,4 +11,4 @@ I (@stchan) am not the author/owner of this code. [Berend Engelbrecht](https://w
 * Bugfixes by [Matthias Böhnke](https://www.codeproject.com/Tips/416486/Bug-Fixes-for-Reading-Barcodes-from-an-Image-III), [matiascabanillas](https://www.codeproject.com/Tips/416486/Bug-Fixes-for-Reading-Barcodes-from-an-Image-III?msg=4388217#xx4388217xx), and [mrodby](https://www.codeproject.com/Tips/416486/Bug-Fixes-for-Reading-Barcodes-from-an-Image-III?msg=5406633#xx5406633xx) have been incorporated (see commit history for details).
 
 ## License
-* Barcode imaging was released under the [Code Project Open License](https://www.codeproject.com/info/cpol10.aspx). Note that this is [*not* a GPL compatible license](https://www.gnu.org/licenses/license-list.html#cpol).
+* BarcodeImaging was released under the [Code Project Open License](https://www.codeproject.com/info/cpol10.aspx). Note that this is [*not* a GPL compatible license](https://www.gnu.org/licenses/license-list.html#cpol).
